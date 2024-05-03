@@ -25,15 +25,26 @@ class MyApp extends StatelessWidget {
           scaffoldBackgroundColor: kPrimaryColor,
           primaryColor: kPrimaryColor,
           //use google font for our app, we will use sourceSansPro
-          textTheme: GoogleFonts.ptSansNarrowTextTheme(Theme.of(context)
-              .textTheme
-              .apply()
-              .copyWith(
-                  //custom text for bodytext1
-                  bodyText1: const TextStyle(
+          textTheme: GoogleFonts.ptSansNarrowTextTheme(
+              Theme.of(context).textTheme.apply().copyWith(
+                    //custom text for bodytext1
+                    bodyText1: const TextStyle(
+                        color: kTextWhiteColor,
+                        fontSize: 35.0,
+                        fontWeight: FontWeight.bold),
+                    bodyText2: const TextStyle(
                       color: kTextWhiteColor,
-                      fontSize: 35.0,
-                      fontWeight: FontWeight.w700))),
+                      fontSize: 28.0,
+                    ),
+                    subtitle1: const TextStyle(
+                        color: kTextWhiteColor,
+                        fontSize: 22.0,
+                        fontWeight: FontWeight.w500),
+                    subtitle2: const TextStyle(
+                        color: kTextWhiteColor,
+                        fontSize: 18.0,
+                        fontWeight: FontWeight.w300),
+                  )),
 
           //input decoration theme for all over the app
           inputDecorationTheme: const InputDecorationTheme(

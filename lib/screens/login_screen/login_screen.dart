@@ -5,6 +5,7 @@ import "package:flutter/material.dart";
 import "package:flutter/widgets.dart";
 import "package:kist_college/components/custom_buttons.dart";
 import "package:kist_college/constants.dart";
+import "package:kist_college/home_screen/home_screen.dart";
 
 class LoginScreen extends StatefulWidget {
   static String routeName = 'LoginScreen';
@@ -143,6 +144,8 @@ class _LoginScreenState extends State<LoginScreen> {
                             onPress: () {
                               if (_formKey.currentState!.validate()) {
                                 //go to next activity
+                                Navigator.pushNamedAndRemoveUntil(context,
+                                    HomeScreen.routeName, (route) => false);
                               }
                             },
                             title: "Sign In",
