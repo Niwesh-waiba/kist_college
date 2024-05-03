@@ -1,8 +1,10 @@
+// ignore_for_file: deprecated_member_use
+
+import "package:flutter/cupertino.dart";
 import "package:flutter/material.dart";
 import "package:flutter/widgets.dart";
+import "package:kist_college/components/custom_buttons.dart";
 import "package:kist_college/constants.dart";
-
-late bool _passwordVisible;
 
 class LoginScreen extends StatefulWidget {
   static String routeName = 'LoginScreen';
@@ -14,24 +16,18 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  //changes current state
-  @override
-  void initState() {
-    super.initState();
-    _passwordVisible = true;
-  }
+  //validate our form
+  final _formKey = GlobalKey<FormState>();
+  bool _passwordVisible = true;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      //when user taps anywhere on the screen, the keyboard hides.
       onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
       child: Scaffold(
         body: ListView(
           children: [
-            //divide the body into two half
-            // ignore: sized_box_for_whitespace
-            Container(
+            SizedBox(
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height / 2.0,
               child: Column(
@@ -70,7 +66,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   Text(
                     'sign in to continue',
-                    style: Theme.of(context).textTheme.subtitle2,
+                    style: Theme.of(context).textTheme.titleSmall,
                   )
                 ],
               ),
@@ -90,54 +86,81 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: Column(
                   children: [
                     Form(
-                        child: Column(
-                      children: [
-                        const SizedBox(
-                          height: kDefaultPadding,
-                        ),
-                        TextFormField(
-                          textAlign: TextAlign.start,
-                          keyboardType: TextInputType.emailAddress,
-                          style: const TextStyle(
-                              color: kTextBlackColor,
-                              fontSize: 17.0,
-                              fontWeight: FontWeight.w300),
-                          decoration: const InputDecoration(
-                            labelText: 'Mobile Number/Email',
-                            floatingLabelBehavior: FloatingLabelBehavior.always,
-                            isDense: true,
+                      key: _formKey,
+                      child: Column(
+                        children: [
+                          sizedBox,
+                          TextFormField(
+                            textAlign: TextAlign.start,
+                            keyboardType: TextInputType.emailAddress,
+                            style: const TextStyle(
+                                color: kTextBlackColor,
+                                fontSize: 17.0,
+                                fontWeight: FontWeight.w300),
+                            decoration: const InputDecoration(
+                              labelText: 'Mobile Number/Email',
+                              floatingLabelBehavior:
+                                  FloatingLabelBehavior.always,
+                              isDense: true,
+                            ),
+                            validator: buildEmailField,
                           ),
-                        ),
-                        const SizedBox(
-                          height: kDefaultPadding,
-                        ),
-                        TextFormField(
-                          obscureText: _passwordVisible,
-                          textAlign: TextAlign.start,
-                          keyboardType: TextInputType.visiblePassword,
-                          style: const TextStyle(
-                              color: kTextBlackColor,
-                              fontSize: 17.0,
-                              fontWeight: FontWeight.w300),
-                          decoration: const InputDecoration(
-                            labelText: 'Password',
-                            floatingLabelBehavior: FloatingLabelBehavior.always,
-                            isDense: true,
-                            // suffixIcon: IconButton(
-                            //   onPressed: () {
-                            //     setState(() {
-                            //       _passwordVisible = !_passwordVisible;
-                            //     });
-                            //   },
-                            //   icon: Icon(_passwordVisible
-                            //       ? Icons.visibility_off_outlined
-                            //       : Icons.visibility_off_outlined),
-                            //   iconSize: kDefaultPadding,
-                            // ),
+                          sizedBox,
+                          TextFormField(
+                            obscureText: !_passwordVisible,
+                            textAlign: TextAlign.start,
+                            keyboardType: TextInputType.visiblePassword,
+                            style: const TextStyle(
+                                color: kTextBlackColor,
+                                fontSize: 17.0,
+                                fontWeight: FontWeight.w300),
+                            decoration: InputDecoration(
+                              labelText: 'Password',
+                              floatingLabelBehavior:
+                                  FloatingLabelBehavior.always,
+                              isDense: true,
+                              suffixIcon: IconButton(
+                                onPressed: () {
+                                  setState(() {
+                                    _passwordVisible = !_passwordVisible;
+                                  });
+                                },
+                                icon: Icon(_passwordVisible
+                                    ? Icons.visibility_off_outlined
+                                    : Icons.visibility_outlined),
+                                iconSize: kDefaultPadding,
+                              ),
+                            ),
+                            // ignore: body_might_complete_normally_nullable
+                            validator: (value) {
+                              if (value!.length < 5) {
+                                return 'Must be more than 5 character';
+                              }
+                            },
                           ),
-                        ),
-                      ],
-                    ))
+                          sizedBox,
+                          DefaultButton(
+                            onPress: () {
+                              if (_formKey.currentState!.validate()) {
+                                //go to next activity
+                              }
+                            },
+                            title: "Sign In",
+                            iconData: Icons.arrow_forward_outlined,
+                          ),
+                          sizedBox,
+                          const Align(
+                            alignment: Alignment.bottomRight,
+                            child: Text(
+                              'Forgot Password',
+                              textAlign: TextAlign.end,
+                              style: TextStyle(
+                                  color: kPrimaryColor, fontSize: 15.0),
+                            ),
+                          ),
+                        ],
+                      ),
+                    )
                   ],
                 ),
               ),
@@ -146,5 +169,15 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
       ),
     );
+  }
+
+  // ignore: body_might_complete_normally_nullable
+  String? buildEmailField(value) {
+    RegExp regExp = RegExp(emailPattern);
+    if (value == null || value.isEmpty) {
+      return 'please enter some text';
+    } else if (!regExp.hasMatch(value)) {
+      return 'please enter a valid email address.';
+    }
   }
 }

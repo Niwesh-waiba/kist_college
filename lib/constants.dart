@@ -13,6 +13,7 @@ const Color kErrorBorderColor = Color(0xFFE74C3C);
 //default value
 const kDefaultPadding = 20.0;
 
+const sizedBox = SizedBox(height: kDefaultPadding);
 //validation for mobile
 const String mobilePattern = r'^(?:[+0]?9)?[0-9]{10,12}$';
 
