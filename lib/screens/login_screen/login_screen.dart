@@ -4,7 +4,7 @@ import "package:flutter/material.dart";
 
 import "package:kist_college/components/custom_buttons.dart";
 import "package:kist_college/constants.dart";
-import "package:kist_college/home_screen/home_screen.dart";
+import "package:kist_college/screens/home_screen/home_screen.dart";
 
 class LoginScreen extends StatefulWidget {
   static String routeName = 'LoginScreen';

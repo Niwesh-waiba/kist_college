@@ -24,6 +24,10 @@ class MyApp extends StatelessWidget {
           //scaffold default color
           scaffoldBackgroundColor: kPrimaryColor,
           primaryColor: kPrimaryColor,
+          appBarTheme: const AppBarTheme(
+            color: kPrimaryColor,
+            elevation: 0,
+          ),
           //use google font for our app, we will use sourceSansPro
           textTheme: GoogleFonts.ptSansNarrowTextTheme(
               Theme.of(context).textTheme.apply().copyWith(
