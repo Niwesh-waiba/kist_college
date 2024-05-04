@@ -1,8 +1,10 @@
 // ignore_for_file: deprecated_member_use, sized_box_for_whitespace
 
 import "package:flutter/material.dart";
-import "package:flutter/widgets.dart";
+
+import "package:flutter_svg/flutter_svg.dart";
 import "package:kist_college/constants.dart";
+import "package:kist_college/home_screen/widgets/student_data.dart";
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -24,156 +26,35 @@ class HomeScreen extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    Column(
+                    const Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Row(
-                          children: [
-                            Text(
-                              "Hi ",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .subtitle1!
-                                  .copyWith(fontWeight: FontWeight.w200),
-                            ),
-                            Text(
-                              "Niwesh",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .subtitle1!
-                                  .copyWith(fontWeight: FontWeight.w500),
-                            )
-                          ],
-                        ),
-                        const SizedBox(
-                          height: kDefaultPadding / 2,
-                        ),
-                        Text(
-                          "BIM 6th Sem | Id: 5554 ",
-                          style: Theme.of(context)
-                              .textTheme
-                              .subtitle2!
-                              .copyWith(fontSize: 14.0, color: kTextWhiteColor),
-                        ),
-                        const SizedBox(
-                          height: kDefaultPadding / 2,
-                        ),
-                        Container(
-                          width: 100,
-                          height: 20,
-                          decoration: BoxDecoration(
-                            color: kOtherColor,
-                            borderRadius:
-                                BorderRadius.circular(kDefaultPadding),
-                          ),
-                          child: const Center(
-                            child: Text(
-                              'Batch: 2020 - 2025',
-                              style: TextStyle(
-                                  fontSize: 12.0,
-                                  color: kTextBlackColor,
-                                  fontWeight: FontWeight.w200),
-                            ),
-                          ),
-                        )
+                        StudentName(studentName: 'Niwesh'),
+                        kHalfsizedBox,
+                        StudentClass(studentClass: 'BIM 6th Sem | Id: 5554 '),
+                        kHalfsizedBox,
+                        StudentYear(studentYear: 'Batch: 2020 - 2025'),
                       ],
                     ),
-                    const SizedBox(
-                      height: kDefaultPadding / 6,
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        //go to profile edit screen from here
-                      },
-                      child: const CircleAvatar(
-                        minRadius: 50.0,
-                        maxRadius: 50.0,
-                        backgroundColor: kSecondaryColor,
-                        backgroundImage: AssetImage('assets/images/n.jpg'),
-                      ),
-                    )
+                    kHalfsizedBox,
+                    StudentPicture(
+                        picAddress: 'assets/images/n.jpg', onPress: () {}),
                   ],
                 ),
                 sizedBox,
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    InkWell(
-                      onTap: () {
-                        //go to attendance screen here
-                      },
-                      child: Container(
-                        width: MediaQuery.of(context).size.width / 2.5,
-                        height: MediaQuery.of(context).size.height / 9,
-                        decoration: BoxDecoration(
-                            color: kOtherColor,
-                            borderRadius:
-                                BorderRadius.circular(kDefaultPadding)),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            Text(
-                              'Attendance',
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyText2!
-                                  .copyWith(
-                                      fontSize: 16.0,
-                                      color: kTextBlackColor,
-                                      fontWeight: FontWeight.w800),
-                            ),
-                            Text(
-                              '90.79 %',
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .subtitle2!
-                                  .copyWith(
-                                      fontSize: 25.0,
-                                      color: kTextBlackColor,
-                                      fontWeight: FontWeight.w300),
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
-                    InkWell(
-                      onTap: () {
-                        //go to fees screen here
-                      },
-                      child: Container(
-                        width: MediaQuery.of(context).size.width / 2.5,
-                        height: MediaQuery.of(context).size.height / 9,
-                        decoration: BoxDecoration(
-                            color: kOtherColor,
-                            borderRadius:
-                                BorderRadius.circular(kDefaultPadding)),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            Text(
-                              'Fees Dues',
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyText2!
-                                  .copyWith(
-                                      fontSize: 16.0,
-                                      color: kTextBlackColor,
-                                      fontWeight: FontWeight.w800),
-                            ),
-                            Text(
-                              'Rs. 50,000',
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .subtitle2!
-                                  .copyWith(
-                                      fontSize: 25.0,
-                                      color: kTextBlackColor,
-                                      fontWeight: FontWeight.w300),
-                            )
-                          ],
-                        ),
-                      ),
-                    )
+                    StudentDataCard(
+                        title: 'Attendance',
+                        value: '90.79 %',
+                        onPress: () {
+                          //go to attendance screen here
+                        }),
+                    StudentDataCard(
+                        title: 'Fees Dues',
+                        value: 'Rs. 50,000',
+                        onPress: () {}),
                   ],
                 )
               ],
@@ -192,10 +73,152 @@ class HomeScreen extends StatelessWidget {
                       topLeft: Radius.circular(kDefaultPadding * 3),
                       topRight: Radius.circular(kDefaultPadding * 3),
                     )),
+                child: ListView(
+                  physics: const BouncingScrollPhysics(),
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        HomeCard(
+                          onPress: () {},
+                          icon: 'assets/icons/quiz.svg',
+                          title: 'Take Quiz',
+                        ),
+                        HomeCard(
+                          onPress: () {},
+                          icon: 'assets/icons/assignment.svg',
+                          title: 'assignment',
+                        ),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        HomeCard(
+                          onPress: () {},
+                          icon: 'assets/icons/holiday.svg',
+                          title: 'holiday',
+                        ),
+                        HomeCard(
+                          onPress: () {},
+                          icon: 'assets/icons/timetable.svg',
+                          title: 'timetable',
+                        ),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        HomeCard(
+                          onPress: () {},
+                          icon: 'assets/icons/result.svg',
+                          title: 'Result',
+                        ),
+                        HomeCard(
+                          onPress: () {},
+                          icon: 'assets/icons/datesheet.svg',
+                          title: 'DateSheet',
+                        ),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        HomeCard(
+                          onPress: () {},
+                          icon: 'assets/icons/ask.svg',
+                          title: 'Ask',
+                        ),
+                        HomeCard(
+                          onPress: () {},
+                          icon: 'assets/icons/gallery.svg',
+                          title: 'Gallery',
+                        ),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        HomeCard(
+                          onPress: () {},
+                          icon: 'assets/icons/resume.svg',
+                          title: 'Leave Application',
+                        ),
+                        HomeCard(
+                          onPress: () {},
+                          icon: 'assets/icons/lock.svg',
+                          title: 'Change\nPassword',
+                        ),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        HomeCard(
+                          onPress: () {},
+                          icon: 'assets/icons/event.svg',
+                          title: 'Events',
+                        ),
+                        HomeCard(
+                          onPress: () {},
+                          icon: 'assets/icons/logout.svg',
+                          title: 'Logout',
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class HomeCard extends StatelessWidget {
+  const HomeCard({
+    super.key,
+    required this.onPress,
+    required this.icon,
+    required this.title,
+  });
+  final VoidCallback onPress;
+  final String icon;
+  final String title;
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: onPress,
+      child: Container(
+        margin: const EdgeInsets.only(top: kDefaultPadding / 2),
+        width: MediaQuery.of(context).size.width / 2.5,
+        height: MediaQuery.of(context).size.height / 6,
+        decoration: BoxDecoration(
+            color: kPrimaryColor,
+            borderRadius: BorderRadius.circular(kDefaultPadding / 2)),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            SvgPicture.asset(
+              icon,
+              height: 40.0,
+              width: 40.0,
+              color: kOtherColor,
+            ),
+            Text(
+              title,
+              textAlign: TextAlign.center,
+              style: Theme.of(context).textTheme.subtitle2,
+            ),
+            const SizedBox(
+              height: kDefaultPadding / 3,
+            )
+          ],
+        ),
       ),
     );
   }

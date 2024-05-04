@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 //colors
-const Color kPrimaryColor = Color.fromARGB(255, 140, 187, 236);
-const Color kSecondaryColor = Color(0xFF6789CA);
+const Color kPrimaryColor = Color.fromARGB(255, 109, 166, 226);
+const Color kSecondaryColor = Color.fromARGB(255, 75, 110, 175);
 const Color kTextBlackColor = Color(0xFF313131);
 const Color kTextWhiteColor = Color(0xFFFFFFFF);
 const Color kContainerColor = Color(0xFF777777);
@@ -12,8 +12,10 @@ const Color kErrorBorderColor = Color(0xFFE74C3C);
 
 //default value
 const kDefaultPadding = 20.0;
-
-const sizedBox = SizedBox(height: kDefaultPadding);
+const kHalfsizedBox = SizedBox(
+      height: kDefaultPadding / 2,
+    ),
+    sizedBox = SizedBox(height: kDefaultPadding);
 //validation for mobile
 const String mobilePattern = r'^(?:[+0]?9)?[0-9]{10,12}$';
 

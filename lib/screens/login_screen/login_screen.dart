@@ -1,8 +1,7 @@
 // ignore_for_file: deprecated_member_use
 
-import "package:flutter/cupertino.dart";
 import "package:flutter/material.dart";
-import "package:flutter/widgets.dart";
+
 import "package:kist_college/components/custom_buttons.dart";
 import "package:kist_college/constants.dart";
 import "package:kist_college/home_screen/home_screen.dart";
