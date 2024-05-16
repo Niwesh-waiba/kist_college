@@ -4,7 +4,8 @@ import "package:flutter/material.dart";
 
 import "package:flutter_svg/flutter_svg.dart";
 import "package:kist_college/constants.dart";
-import "package:kist_college/home_screen/widgets/student_data.dart";
+import "package:kist_college/screens/home_screen/widgets/student_data.dart";
+import "package:kist_college/screens/my_profile/my_profile.dart";
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -38,7 +39,12 @@ class HomeScreen extends StatelessWidget {
                     ),
                     kHalfsizedBox,
                     StudentPicture(
-                        picAddress: 'assets/images/n.jpg', onPress: () {}),
+                      picAddress: 'assets/images/n.jpg',
+                      onPress: () {
+                        //go to profile detail screen
+                        Navigator.pushNamed(context, MyProfileScreen.routeName);
+                      },
+                    ),
                   ],
                 ),
                 sizedBox,
