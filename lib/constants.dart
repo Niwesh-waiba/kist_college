@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 //colors
 const Color kPrimaryColor = Color.fromARGB(255, 109, 166, 226);
@@ -20,6 +21,19 @@ const kHalfWidthsizedBox = SizedBox(
 );
 const kwidthsizedBox = SizedBox(
   width: kDefaultPadding,
+);
+
+final kTopBorderRadius = BorderRadius.only(
+  topLeft: Radius.circular(SizerUtil.deviceType == DeviceType.tablet ? 40 : 20),
+  topRight:
+      Radius.circular(SizerUtil.deviceType == DeviceType.tablet ? 40 : 20),
+);
+
+final kBottomBorderRadius = BorderRadius.only(
+  bottomRight:
+      Radius.circular(SizerUtil.deviceType == DeviceType.tablet ? 40 : 20),
+  bottomLeft:
+      Radius.circular(SizerUtil.deviceType == DeviceType.tablet ? 40 : 20),
 );
 const sizedBox = SizedBox(height: kDefaultPadding);
 //validation for mobile

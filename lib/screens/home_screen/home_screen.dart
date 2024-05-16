@@ -4,6 +4,7 @@ import "package:flutter/material.dart";
 
 import "package:flutter_svg/flutter_svg.dart";
 import "package:kist_college/constants.dart";
+import "package:kist_college/screens/datesheet_screen/datesheet_screen.dart";
 import "package:kist_college/screens/home_screen/widgets/student_data.dart";
 import "package:kist_college/screens/my_profile/my_profile.dart";
 
@@ -121,7 +122,10 @@ class HomeScreen extends StatelessWidget {
                           title: 'Result',
                         ),
                         HomeCard(
-                          onPress: () {},
+                          onPress: () {
+                            Navigator.pushNamed(
+                                context, DateSheetScreen.routeName);
+                          },
                           icon: 'assets/icons/datesheet.svg',
                           title: 'DateSheet',
                         ),
