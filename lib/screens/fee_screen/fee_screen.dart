@@ -1,10 +1,9 @@
 import 'package:kist_college/constants.dart';
-
 import 'package:flutter/material.dart';
 
-class DateSheetScreen extends StatelessWidget {
-  const DateSheetScreen({Key? key}) : super(key: key);
-  static const String routeName = 'DateSheetScreen';
+class FeeScreen extends StatelessWidget {
+  const FeeScreen({Key? key}) : super(key: key);
+  static String routeName = 'FeeScreen';
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +16,7 @@ class DateSheetScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                'Datesheet ',
+                'fee ',
                 style: Theme.of(context).textTheme.bodyText1!.copyWith(
                       // <- Added null-aware access operator
                       color: kTextWhiteColor,
@@ -27,7 +26,7 @@ class DateSheetScreen extends StatelessWidget {
                     ),
               ),
               Text(
-                'Page',
+                'Screen',
                 style: Theme.of(context).textTheme.bodyText1!.copyWith(
                       // <- Added null-aware access operator
                       color: kTextWhiteColor,

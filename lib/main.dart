@@ -1,5 +1,7 @@
 // ignore_for_file: deprecated_member_use
 
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:kist_college/constants.dart';
 import 'package:kist_college/routes.dart';
@@ -7,7 +9,18 @@ import 'package:kist_college/screens/splash_screen/splash_screen.dart';
 
 import 'package:google_fonts/google_fonts.dart';
 
-void main() {
+Future main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  if (kIsWeb) {
+    await Firebase.initializeApp(
+        options: FirebaseOptions(
+            apiKey: "AIzaSyBxvMC68lhv3efWkqwM6S_-xoHJJKOoShU",
+            appId: "1:1009001803419:web:bfefbefcb320f7907be03e",
+            messagingSenderId: "1009001803419",
+            projectId: "kistcollege-a665a"));
+  } else {
+    await Firebase.initializeApp();
+  }
   runApp(const MyApp());
 }
 

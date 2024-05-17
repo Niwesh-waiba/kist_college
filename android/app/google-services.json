@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1009001803419",
+    "project_id": "kistcollege-a665a",
+    "storage_bucket": "kistcollege-a665a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1009001803419:android:fdacb57f3e1aefa17be03e",
+        "android_client_info": {
+          "package_name": "com.example.kist_college"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCffrLUvARS6h5dvdyl8uGGn8lGaez4LBA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

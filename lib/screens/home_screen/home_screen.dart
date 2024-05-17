@@ -4,7 +4,9 @@ import "package:flutter/material.dart";
 
 import "package:flutter_svg/flutter_svg.dart";
 import "package:kist_college/constants.dart";
+import "package:kist_college/screens/assignment_screen/assignment_screen.dart";
 import "package:kist_college/screens/datesheet_screen/datesheet_screen.dart";
+import "package:kist_college/screens/fee_screen/fee_screen.dart";
 import "package:kist_college/screens/home_screen/widgets/student_data.dart";
 import "package:kist_college/screens/my_profile/my_profile.dart";
 
@@ -61,7 +63,10 @@ class HomeScreen extends StatelessWidget {
                     StudentDataCard(
                         title: 'Fees Dues',
                         value: 'Rs. 50,000',
-                        onPress: () {}),
+                        onPress: () {
+                          //go to fee due screen
+                          Navigator.pushNamed(context, FeeScreen.routeName);
+                        }),
                   ],
                 )
               ],
@@ -88,28 +93,17 @@ class HomeScreen extends StatelessWidget {
                       children: [
                         HomeCard(
                           onPress: () {},
-                          icon: 'assets/icons/quiz.svg',
-                          title: 'Take Quiz',
+                          icon: 'assets/icons/timetable.svg',
+                          title: 'Calender',
                         ),
                         HomeCard(
-                          onPress: () {},
+                          onPress: () {
+                            //go to assignment screen here
+                            Navigator.pushNamed(
+                                context, AssignmentScreen.routeName);
+                          },
                           icon: 'assets/icons/assignment.svg',
                           title: 'assignment',
-                        ),
-                      ],
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        HomeCard(
-                          onPress: () {},
-                          icon: 'assets/icons/holiday.svg',
-                          title: 'holiday',
-                        ),
-                        HomeCard(
-                          onPress: () {},
-                          icon: 'assets/icons/timetable.svg',
-                          title: 'timetable',
                         ),
                       ],
                     ),

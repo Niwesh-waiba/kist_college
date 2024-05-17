@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 
 //colors
@@ -13,6 +14,7 @@ const Color kErrorBorderColor = Color(0xFFE74C3C);
 
 //default value
 const kDefaultPadding = 20.0;
+
 const kHalfsizedBox = SizedBox(
   height: kDefaultPadding / 2,
 );
@@ -35,6 +37,10 @@ final kBottomBorderRadius = BorderRadius.only(
   bottomLeft:
       Radius.circular(SizerUtil.deviceType == DeviceType.tablet ? 40 : 20),
 );
+
+final kInputTextStyle = GoogleFonts.poppins(
+    color: kTextBlackColor, fontSize: 11.sp, fontWeight: FontWeight.w500);
+
 const sizedBox = SizedBox(height: kDefaultPadding);
 //validation for mobile
 const String mobilePattern = r'^(?:[+0]?9)?[0-9]{10,12}$';
