@@ -103,8 +103,8 @@ class MyProfileScreen extends StatelessWidget {
                 title: 'Email', value: 'niweshwaiba@gmail.com'),
             const ProfileDetailColumn(
                 title: 'Contact number', value: '9866332606'),
-            const ProfileDetailColumn(
-                title: 'Secondary number', value: '9818509722'),
+            // const ProfileDetailColumn(
+            //     title: 'Secondary number', value: '9818509722'),
             const ProfileDetailColumn(
                 title: 'Address', value: 'nayabasti, gokarneshwor-5'),
           ],

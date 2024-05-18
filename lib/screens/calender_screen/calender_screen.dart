@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:kist_college/constants.dart';
 
-class AssignmentScreen extends StatelessWidget {
-  const AssignmentScreen({Key? key}) : super(key: key);
-  static String routeName = 'AssignmentScreen';
+class CalenderScreen extends StatelessWidget {
+  const CalenderScreen({Key? key}) : super(key: key);
+  static String routeName = 'CalenderScreen';
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class AssignmentScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                'List of Assignment ',
+                'Calender Screen ',
                 style: Theme.of(context).textTheme.bodyText1!.copyWith(
                       // <- Added null-aware access operator
                       color: kTextWhiteColor,

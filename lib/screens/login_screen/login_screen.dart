@@ -50,7 +50,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         style: TextStyle(
                             fontWeight: FontWeight.w200,
                             fontSize: 35.0,
-                            color: kTextLightColor),
+                            color: kTextBlackColor),
                       ),
                       Text(
                         ' Student',

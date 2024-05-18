@@ -5,6 +5,8 @@ import "package:flutter/material.dart";
 import "package:flutter_svg/flutter_svg.dart";
 import "package:kist_college/constants.dart";
 import "package:kist_college/screens/assignment_screen/assignment_screen.dart";
+import "package:kist_college/screens/attendance_screen/attendance_screen.dart";
+import "package:kist_college/screens/calender_screen/calender_screen.dart";
 import "package:kist_college/screens/datesheet_screen/datesheet_screen.dart";
 import "package:kist_college/screens/fee_screen/fee_screen.dart";
 import "package:kist_college/screens/home_screen/widgets/student_data.dart";
@@ -59,6 +61,8 @@ class HomeScreen extends StatelessWidget {
                         value: '90.79 %',
                         onPress: () {
                           //go to attendance screen here
+                          Navigator.pushNamed(
+                              context, AttendanceScreen.routeName);
                         }),
                     StudentDataCard(
                         title: 'Fees Dues',
@@ -92,7 +96,10 @@ class HomeScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         HomeCard(
-                          onPress: () {},
+                          onPress: () {
+                            Navigator.pushNamed(
+                                context, CalenderScreen.routeName);
+                          },
                           icon: 'assets/icons/timetable.svg',
                           title: 'Calender',
                         ),
