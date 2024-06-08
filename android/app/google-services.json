@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "671119267757",
+    "project_id": "summerproject-702d6",
+    "storage_bucket": "summerproject-702d6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:671119267757:android:cb752fea3c6caeb4cb7324",
+        "android_client_info": {
+          "package_name": "com.example.kist_college"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_FMjvmDpBDPlywVGqTEVYdikRpNqfvrk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
