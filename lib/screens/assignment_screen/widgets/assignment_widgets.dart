@@ -17,12 +17,12 @@ class AssignmentDetailRow extends StatelessWidget {
           title,
           style: Theme.of(context)
               .textTheme
-              .caption!
+              .bodySmall!
               .copyWith(color: kTextBlackColor, fontWeight: FontWeight.w900),
         ),
         Text(
           statusValue,
-          style: Theme.of(context).textTheme.caption,
+          style: Theme.of(context).textTheme.bodySmall,
         ),
       ],
     );
@@ -53,7 +53,7 @@ class AssignmentButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(kDefaultPadding),
         ),
         child: Center(
-          child: Text(title, style: Theme.of(context).textTheme.subtitle2),
+          child: Text(title, style: Theme.of(context).textTheme.titleSmall),
         ),
       ),
     );

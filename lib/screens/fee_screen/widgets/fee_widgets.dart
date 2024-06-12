@@ -32,7 +32,7 @@ class FeeButton extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(title, style: Theme.of(context).textTheme.subtitle2),
+            Text(title, style: Theme.of(context).textTheme.titleSmall),
             Icon(
               iconData,
               color: kOtherColor,
@@ -57,12 +57,12 @@ class FeeDetailRow extends StatelessWidget {
       children: [
         Text(
           title,
-          style: Theme.of(context).textTheme.subtitle2!.copyWith(
+          style: Theme.of(context).textTheme.titleSmall!.copyWith(
                 color: kTextBlackColor,
                 fontWeight: FontWeight.w900,
               ),
         ),
-        Text(statusValue, style: Theme.of(context).textTheme.caption),
+        Text(statusValue, style: Theme.of(context).textTheme.bodySmall),
       ],
     );
   }

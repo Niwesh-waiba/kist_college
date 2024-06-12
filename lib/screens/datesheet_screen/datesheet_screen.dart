@@ -18,7 +18,7 @@ class DateSheetScreen extends StatelessWidget {
             children: [
               Text(
                 'Datesheet ',
-                style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                       // <- Added null-aware access operator
                       color: kTextWhiteColor,
                       fontSize: 50.0, // Adjusted font size
@@ -28,7 +28,7 @@ class DateSheetScreen extends StatelessWidget {
               ),
               Text(
                 'Page',
-                style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                       // <- Added null-aware access operator
                       color: kTextWhiteColor,
                       fontSize: 50.0, // Adjusted font size
