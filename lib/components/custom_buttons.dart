@@ -43,7 +43,7 @@ class DefaultButton extends StatelessWidget {
               title,
               style: Theme.of(context)
                   .textTheme
-                  .subtitle2!
+                  .titleSmall!
                   .copyWith(fontWeight: FontWeight.w500, fontSize: 16.0),
             ),
             const Spacer(),

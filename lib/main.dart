@@ -28,19 +28,19 @@ class MyApp extends StatelessWidget {
           textTheme: GoogleFonts.ptSansNarrowTextTheme(
               Theme.of(context).textTheme.apply().copyWith(
                     //custom text for bodytext1
-                    bodyText1: const TextStyle(
+                    bodyLarge: const TextStyle(
                         color: kTextWhiteColor,
                         fontSize: 35.0,
                         fontWeight: FontWeight.bold),
-                    bodyText2: const TextStyle(
+                    bodyMedium: const TextStyle(
                       color: kTextWhiteColor,
                       fontSize: 28.0,
                     ),
-                    subtitle1: const TextStyle(
+                    titleMedium: const TextStyle(
                         color: kTextWhiteColor,
                         fontSize: 22.0,
                         fontWeight: FontWeight.w500),
-                    subtitle2: const TextStyle(
+                    titleSmall: const TextStyle(
                         color: kTextWhiteColor,
                         fontSize: 18.0,
                         fontWeight: FontWeight.w300),
