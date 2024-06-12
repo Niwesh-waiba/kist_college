@@ -15,14 +15,14 @@ class StudentName extends StatelessWidget {
           "Hi ",
           style: Theme.of(context)
               .textTheme
-              .subtitle1!
+              .titleMedium!
               .copyWith(fontWeight: FontWeight.w200),
         ),
         Text(
           studentName,
           style: Theme.of(context)
               .textTheme
-              .subtitle1!
+              .titleMedium!
               .copyWith(fontWeight: FontWeight.w500),
         )
       ],
@@ -40,7 +40,7 @@ class StudentClass extends StatelessWidget {
       studentClass,
       style: Theme.of(context)
           .textTheme
-          .subtitle2!
+          .titleSmall!
           .copyWith(fontSize: 14.0, color: kTextWhiteColor),
     );
   }
@@ -120,14 +120,14 @@ class StudentDataCard extends StatelessWidget {
           children: [
             Text(
               title,
-              style: Theme.of(context).textTheme.bodyText2!.copyWith(
+              style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                   fontSize: 16.0,
                   color: kTextBlackColor,
                   fontWeight: FontWeight.w800),
             ),
             Text(
               value,
-              style: Theme.of(context).textTheme.subtitle2!.copyWith(
+              style: Theme.of(context).textTheme.titleSmall!.copyWith(
                   fontSize: 25.0,
                   color: kTextBlackColor,
                   fontWeight: FontWeight.w300),

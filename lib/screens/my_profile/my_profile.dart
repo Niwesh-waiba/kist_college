@@ -25,7 +25,7 @@ class MyProfileScreen extends StatelessWidget {
                   kHalfWidthsizedBox,
                   Text(
                     'Report',
-                    style: Theme.of(context).textTheme.subtitle2,
+                    style: Theme.of(context).textTheme.titleSmall,
                   )
                 ],
               ),
@@ -62,11 +62,11 @@ class MyProfileScreen extends StatelessWidget {
                     children: [
                       Text(
                         'Niwesh Waiba',
-                        style: Theme.of(context).textTheme.subtitle1,
+                        style: Theme.of(context).textTheme.titleMedium,
                       ),
                       Text('BIM 6th sem | Id: 5554',
                           style:
-                              Theme.of(context).textTheme.subtitle2!.copyWith(
+                              Theme.of(context).textTheme.titleSmall!.copyWith(
                                     fontSize: 14.0,
                                   ))
                     ],
@@ -136,7 +136,7 @@ class ProfileDetailRow extends StatelessWidget {
             children: [
               Text(
                 title,
-                style: Theme.of(context).textTheme.subtitle2!.copyWith(
+                style: Theme.of(context).textTheme.titleSmall!.copyWith(
                     color: kTextLightColor,
                     fontWeight: FontWeight.w600,
                     fontSize: 15.0),
@@ -144,7 +144,7 @@ class ProfileDetailRow extends StatelessWidget {
               kHalfsizedBox,
               Text(
                 value,
-                style: Theme.of(context).textTheme.subtitle2!.copyWith(
+                style: Theme.of(context).textTheme.titleSmall!.copyWith(
                     color: kTextBlackColor,
                     fontWeight: FontWeight.w600,
                     fontSize: 15.0),
@@ -188,13 +188,13 @@ class ProfileDetailColumn extends StatelessWidget {
                 title,
                 style: Theme.of(context)
                     .textTheme
-                    .subtitle2!
+                    .titleSmall!
                     .copyWith(color: kTextLightColor, fontSize: 15.0),
               ),
               kHalfsizedBox,
               Text(
                 value,
-                style: Theme.of(context).textTheme.subtitle2!.copyWith(
+                style: Theme.of(context).textTheme.titleSmall!.copyWith(
                     color: kTextBlackColor,
                     fontSize: 15.0,
                     fontWeight: FontWeight.w600),
