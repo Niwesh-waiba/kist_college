@@ -1,13 +1,23 @@
 {
   "project_info": {
+<<<<<<< HEAD
     "project_number": "1009001803419",
     "project_id": "kistcollege-a665a",
     "storage_bucket": "kistcollege-a665a.appspot.com"
+=======
+    "project_number": "671119267757",
+    "project_id": "summerproject-702d6",
+    "storage_bucket": "summerproject-702d6.appspot.com"
+>>>>>>> 400654275b8b4ffa982b003d047607b14ecdeca4
   },
   "client": [
     {
       "client_info": {
+<<<<<<< HEAD
         "mobilesdk_app_id": "1:1009001803419:android:fdacb57f3e1aefa17be03e",
+=======
+        "mobilesdk_app_id": "1:671119267757:android:cb752fea3c6caeb4cb7324",
+>>>>>>> 400654275b8b4ffa982b003d047607b14ecdeca4
         "android_client_info": {
           "package_name": "com.example.kist_college"
         }
@@ -15,7 +25,11 @@
       "oauth_client": [],
       "api_key": [
         {
+<<<<<<< HEAD
           "current_key": "AIzaSyCffrLUvARS6h5dvdyl8uGGn8lGaez4LBA"
+=======
+          "current_key": "AIzaSyC_FMjvmDpBDPlywVGqTEVYdikRpNqfvrk"
+>>>>>>> 400654275b8b4ffa982b003d047607b14ecdeca4
         }
       ],
       "services": {
