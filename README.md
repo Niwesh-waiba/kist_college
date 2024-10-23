@@ -20,11 +20,11 @@ You can download the APK of the KIST Student Portal app from the following link:
 
 Here are some screenshots of the app:
 
-![Home Screen](pic/1.jpg)
-![Notices](pic/2.jpg)
-![Assignments](pic/3.jpg)
-![Attendance Tracking](pic/4.jpg)
-![Class Chat](pic/5.jpg)
+<img src="pic/1.jpg" alt="Home Screen" width="300"/>
+<img src="pic/2.jpg" alt="Notices" width="300"/>
+<img src="pic/3.jpg" alt="Assignments" width="300"/>
+<img src="pic/4.jpg" alt="Attendance Tracking" width="300"/>
+<img src="pic/5.jpg" alt="Class Chat" width="300"/>
 
 ## Tech Stack
 
