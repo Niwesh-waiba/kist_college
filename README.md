@@ -1,6 +1,4 @@
-# kist_college
-
-# KIST College Student Portal
+# Neuu KIST College Student Portal
 
 A mobile application developed for KIST College, designed to enhance communication and provide essential academic features for students such as notices, assignments, attendance tracking, and a class chat system. This app aims to streamline communication between students and faculty while ensuring easy access to academic information in a user-friendly interface.
 
